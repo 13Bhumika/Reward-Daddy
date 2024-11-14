@@ -1,7 +1,8 @@
-package com.app.rewarddaddy.myreward
+package com.app.rewarddaddy.myreward.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.app.rewarddaddy.myreward.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
