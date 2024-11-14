@@ -20,7 +20,7 @@ class OnboardingActivity : AppCompatActivity() {
 
         binding?.btnContinue?.setOnClickListener {
             if(clickedOnce) {
-                startActivity(Intent(this@OnboardingActivity, CreateAccountActivity::class.java))
+                startActivity(Intent(this@OnboardingActivity, AvatarSelectionActivity::class.java))
             }
             binding?.ivCircleOne?.setImageDrawable(getDrawable(R.drawable.circle_off))
             binding?.ivCircleTwo?.setImageDrawable(getDrawable(R.drawable.circle_on))
@@ -29,7 +29,7 @@ class OnboardingActivity : AppCompatActivity() {
         }
 
         binding?.tvSkip?.setOnClickListener {
-            startActivity(Intent(this@OnboardingActivity, CreateAccountActivity::class.java))
+            startActivity(Intent(this@OnboardingActivity, AvatarSelectionActivity::class.java))
         }
     }
 

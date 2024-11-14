@@ -9,4 +9,8 @@
     <string name="start_playing">Start playing</string>
     <string name="trivia_challenges">Dive into our trivia challenges and put your knowledge to the test.</string>
     <string name="continue_button">Continue</string>
+    <string name="choose_avatar">Choose avatar</string>
+    <string name="avatar_image">Avatar Image</string>
+    <string name="random_name">Sulaiman</string>
+    <string name="let_s_go">Let\'s go!</string>
 </resources>
