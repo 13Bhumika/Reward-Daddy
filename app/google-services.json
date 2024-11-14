@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "703272212699",
+    "project_id": "reward-daddy",
+    "storage_bucket": "reward-daddy.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703272212699:android:05f06faa2fcfe6e42594fe",
+        "android_client_info": {
+          "package_name": "com.app.rewarddaddy.myreward"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703272212699-o4ld2ptcjmjdmtmfu64mmjuubk985ji3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.rewarddaddy.myreward",
+            "certificate_hash": "08a820b78917ee3f3ed513e5b47e62ecd99c5720"
+          }
+        },
+        {
+          "client_id": "703272212699-dh2d7rqmqm8ck64didtd7ddesng8tm73.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzn1z5YodHAKJsX7vWiSGeisqvT1eGVXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703272212699-dh2d7rqmqm8ck64didtd7ddesng8tm73.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
