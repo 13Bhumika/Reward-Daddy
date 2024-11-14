@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play and Win"
+        android:textSize="12sp"
+        android:fontFamily="@font/raleway_regular"
+        android:textStyle="bold"
+        android:layout_margin="15dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_sains"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sains_background"
+        app:layout_constraintTop_toBottomOf="@id/tv_play"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="5dp">
+
+
+        <TextView
+            android:id="@+id/tv_sains"
+            android:layout_width="165dp"
+            android:layout_height="wrap_content"
+            android:text="Sains Spectacular Quiz Competition"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/raleway_regular"
+            android:textStyle="bold"
+            android:layout_margin="15dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16 Questions"
+            android:textSize="8sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/raleway_regular"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_sains"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_bulb"
+            android:layout_margin="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <Button
+            android:id="@+id/btn_sains"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2684FF"
+            android:textColor="@color/white"
+            android:fontFamily="@font/raleway_regular"
+            android:textSize="12sp"
+            android:text="Play now"
+            android:textFontWeight="700"
+            android:layout_margin="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cl_sains"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_ancient"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ancient_history_background"
+            app:layout_constraintTop_toBottomOf="@id/tv_play"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="5dp">
+
+
+            <TextView
+                android:id="@+id/tv_ancient"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="Ancient World History"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/raleway_regular"
+                android:textStyle="bold"
+                android:layout_margin="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16 Questions"
+                android:textSize="8sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/raleway_regular"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_ancient"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/iv_ancient"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_ancient"
+                android:layout_margin="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <Button
+                android:id="@+id/btn_ancient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#2684FF"
+                android:textColor="@color/white"
+                android:fontFamily="@font/raleway_regular"
+                android:textSize="12sp"
+                android:text="Play now"
+                android:textFontWeight="700"
+                android:layout_margin="15dp"
+                app:layout_constraintTop_toBottomOf="@id/iv_ancient"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_nature"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/nature_background"
+            app:layout_constraintTop_toBottomOf="@id/tv_play"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="5dp">
+
+
+            <TextView
+                android:id="@+id/tv_nature"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="Nature and Animal BC"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/raleway_regular"
+                android:textStyle="bold"
+                android:layout_margin="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16 Questions"
+                android:textSize="8sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/raleway_regular"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_nature"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/iv_nature"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_nature"
+                android:layout_margin="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <Button
+                android:id="@+id/btn_nature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#2684FF"
+                android:textColor="@color/white"
+                android:fontFamily="@font/raleway_regular"
+                android:textSize="12sp"
+                android:text="Play now"
+                android:textFontWeight="700"
+                android:layout_margin="15dp"
+                app:layout_constraintTop_toBottomOf="@id/iv_nature"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

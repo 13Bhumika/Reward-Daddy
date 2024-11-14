@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_profile_picture"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/avatar7"
+        android:layout_margin="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_sulaiman"
+        android:fontFamily="@font/raleway_regular"
+        android:textFontWeight="700"
+        android:textSize="12sp"
+        android:textColor="#202020"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintStart_toEndOf="@id/iv_profile_picture"
+        app:layout_constraintTop_toTopOf="@id/iv_profile_picture"
+        app:layout_constraintBottom_toBottomOf="@id/iv_profile_picture"
+        tools:ignore="UnusedAttribute" />
+
+    <TextView
+        android:id="@+id/tv_coin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_100000"
+        android:paddingVertical="3dp"
+        android:paddingHorizontal="7dp"
+        android:background="@drawable/coin_background"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:fontFamily="@font/raleway_regular"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_profile_picture"
+        app:layout_constraintBottom_toBottomOf="@id/iv_profile_picture"
+        />
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_coin"
+        app:layout_constraintEnd_toStartOf="@id/tv_coin"
+        app:layout_constraintTop_toTopOf="@id/tv_coin"
+        app:layout_constraintBottom_toBottomOf="@id/tv_coin"
+        android:importantForAccessibility="no" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
