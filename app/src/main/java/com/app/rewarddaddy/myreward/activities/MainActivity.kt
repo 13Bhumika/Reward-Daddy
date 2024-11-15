@@ -3,9 +3,13 @@ package com.app.rewarddaddy.myreward.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import android.widget.Toast
 import com.app.rewarddaddy.myreward.R
 import com.app.rewarddaddy.myreward.databinding.ActivityMainBinding
+import com.app.rewarddaddy.myreward.firebase.FirebaseAuthHelper
+import com.app.rewarddaddy.myreward.firebase.Firestore
+import com.app.rewarddaddy.myreward.models.User
 import io.adjoe.sdk.Adjoe
 import io.adjoe.sdk.AdjoeException
 import io.adjoe.sdk.AdjoeInitialisationListener
@@ -37,6 +41,7 @@ class MainActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+
         })
 
 
@@ -50,7 +55,33 @@ class MainActivity : AppCompatActivity() {
                 // the offerwall cannot be displayed for some other reason
             }
         }
+
+        setupUserData()
     }
+
+    private fun setupUserData() {
+        val currentUID = FirebaseAuthHelper(this@MainActivity).currentUserUID()
+
+        Firestore(this@MainActivity).getUserData(currentUID) { userData ->
+            if (userData != null) {
+                val user = User(
+                    name = userData["username"] as String,
+                    avatar = (userData["avatar"] as Long).toInt(),
+                    score = userData["score"] as Double
+                )
+
+                // Set the user data to the views
+                val image: ImageView = binding?.profileMain?.ivProfilePicture as ImageView
+                image.setImageDrawable(getDrawable(user.avatar))
+                binding?.profileMain?.tvName?.text = "Hello, " + user.name
+                binding?.profileMain?.tvCoin?.text = user.score.toString()
+            } else {
+                // Handle the case where user data is not found or an error occurred
+                println("User data could not be loaded.")
+            }
+        }
+    }
+
 
     override fun onDestroy() {
         binding = null

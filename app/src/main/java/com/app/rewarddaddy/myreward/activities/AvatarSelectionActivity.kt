@@ -4,11 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.rewarddaddy.myreward.R
 import com.app.rewarddaddy.myreward.adapters.AvatarAdapter
 import com.app.rewarddaddy.myreward.databinding.ActivityAvatarSelectionBinding
+import com.app.rewarddaddy.myreward.firebase.FirebaseAuthHelper
+import com.app.rewarddaddy.myreward.firebase.Firestore
 
 class AvatarSelectionActivity : AppCompatActivity() {
 
@@ -16,6 +19,10 @@ class AvatarSelectionActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var avatarAdapter: AvatarAdapter
+    private var mSelectedAvatar = -1
+    private var mUserName = ""
+    private var mUID = ""
+    private var mScore = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,9 +32,25 @@ class AvatarSelectionActivity : AppCompatActivity() {
         setupRecyclerView()
 
         binding?.btnGo?.setOnClickListener {
+            if(!validateForm()) {
+                Toast.makeText(
+                    this@AvatarSelectionActivity,
+                    "Add name and select avatar.",
+                    Toast.LENGTH_SHORT
+                ).show()
+                return@setOnClickListener
+            }
+            mUserName = binding?.etName?.text.toString()
+            mUID = FirebaseAuthHelper(this@AvatarSelectionActivity).currentUserUID()
+            Firestore(this@AvatarSelectionActivity).addUserData(mUID, mUserName, mSelectedAvatar, mScore)
             startActivity(Intent(this@AvatarSelectionActivity, MainActivity::class.java))
             finish()
         }
+    }
+
+    private fun validateForm(): Boolean {
+        if(binding?.etName?.text?.isEmpty() == true)    return false
+        else return mSelectedAvatar != -1
     }
 
     private fun setupRecyclerView() {
@@ -44,6 +67,7 @@ class AvatarSelectionActivity : AppCompatActivity() {
 
         avatarAdapter = AvatarAdapter(avatarImages) { position ->
             val selectedAvatar = avatarImages[position]
+            mSelectedAvatar = selectedAvatar
             val imageView: ImageView = binding?.ivAvatar as ImageView
             imageView.setImageDrawable(getDrawable(selectedAvatar))
         }
