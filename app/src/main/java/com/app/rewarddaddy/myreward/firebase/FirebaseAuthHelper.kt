@@ -43,14 +43,12 @@ class FirebaseAuthHelper(private val activity: Activity) {
                 auth.signInWithCredential(credential)
                     .addOnCompleteListener(activity) { authTask ->
                         if (authTask.isSuccessful) {
-                            // Sign-in success, launch MainActivity
                             val email = account.email
                             Toast.makeText(activity, "Sign-in successful for $email", Toast.LENGTH_SHORT).show()
                             val intent = Intent(activity, AvatarSelectionActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                             activity.startActivity(intent)
                         } else {
-                            // Log detailed information about the failure
                             Log.e("SignInError", "Authentication failed: ${authTask.exception?.message}", authTask.exception)
                             Toast.makeText(activity, "Sign-in failed: ${authTask.exception?.message}", Toast.LENGTH_LONG).show()
                         }
