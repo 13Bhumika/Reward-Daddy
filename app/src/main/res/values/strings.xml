@@ -15,4 +15,6 @@
     <string name="let_s_go">Let\'s go!</string>
     <string name="hello_sulaiman">Hello, Sulaiman!</string>
     <string name="_100000">100000</string>
+    <string name="default_web_client_id">YOUR_CLIENT_ID_HERE</string>
+
 </resources>
